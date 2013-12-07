@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>模板引擎用法</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<script type="text/template" id="J-tpl">
+		my name:<% name%>,age is <% profile.age %>
+	</script>
+
+	<textarea style="display:none" id="J-tpl2">
+		My skills:
+		'<% for(var i=0,len = this.skills.length;i<len;i++){ %>' +
+			'<a href=""><% skills[i] %></a>' +
+		'<% } %>';
+
+	</textarea>
+
+
+	<script type="text/javascript" src="template.js"></script>
+	<script type="text/javascript">
+		//1.简单赋值
+		var template = 'my name:<% name%>,age is <%profile.age%>';
+		var data = {
+			name:'wuya',
+			profile:{
+				age:26
+			}
+		};
+		console.log(TemplateEngine(template,data));
+
+		//2.通过id获取模板
+		var str = TemplateEngine('J-tpl',data);
+		console.log(str);
+
+		//3.有for循环
+		var str2 = TemplateEngine('J-tpl2',{"skills":['html','css','js']});
+		console.log(str2);
+	</script>
+</body>
+</html>
