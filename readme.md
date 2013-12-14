@@ -2,7 +2,11 @@
 
 实现原理：将传入模板中的字符进行分类，组成一个新的字符串。 再通过new Function形式，将刚才拼成的新字符串变成js代码 生成一个匿名函数，最后调用这个匿名函数并传入序列化参数。
 
-/**underscope实现***
+/**underscope实现***/
+
+:::javascript
+
+
 //不匹配任何东西
 var noMatch = /(.)^/;
   // Certain characters need to be escaped so that they can be put into a
