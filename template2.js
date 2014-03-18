@@ -1,3 +1,7 @@
+/**
+ * @author by 素人渔夫
+ * /
+
 function template(tpl,data){
 		var reg = /<%([^%>]+)%>/g,
 			regExp = /(^( )?(if|else|switch|case|break|{|}))(.*)?/g,
